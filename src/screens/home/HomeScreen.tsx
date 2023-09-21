@@ -5,6 +5,8 @@ import Icon, { IconType } from "react-native-dynamic-vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as NavigationService from "react-navigation-helpers";
 import RNBounceable from "@freakycoder/react-native-bounceable";
+import Geolocation from "react-native-geolocation-service";
+
 /**
  * ? Local Imports
  */
@@ -32,6 +34,22 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   const handleItemPress = () => {
     NavigationService.push(SCREENS.DETAIL);
   };
+
+  React.useEffect(() => {
+    Geolocation.getCurrentPosition(
+      (info) => {
+        console.log(info);
+      },
+      (error) => {
+        console.log(error);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 10000,
+      },
+    );
+  }, []);
 
   /* -------------------------------------------------------------------------- */
   /*                               Render Methods                               */
@@ -73,13 +91,13 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   const Welcome = () => (
     <>
       <Text h1 bold color={colors.text}>
-        Hello Kuray
+        Hello Zach
       </Text>
       <Text
         fontFamily={fonts.montserrat.lightItalic}
         color={colors.placeholder}
       >
-        Welcome Back
+        The weather is looking nice
       </Text>
     </>
   );

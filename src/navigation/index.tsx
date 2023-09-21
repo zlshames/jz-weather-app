@@ -29,7 +29,7 @@ const Navigation = () => {
     return () => (isReadyRef.current = false);
   }, []);
 
-  const renderTabIcon = (
+  const RenderTabIcon = (
     route: any,
     focused: boolean,
     color: string,
@@ -63,13 +63,13 @@ const Navigation = () => {
     );
   };
 
-  const renderTabNavigation = () => {
+  const RenderTabNavigation = () => {
     return (
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) =>
-            renderTabIcon(route, focused, color, size),
+            RenderTabIcon(route, focused, color, size),
           tabBarActiveTintColor: palette.primary,
           tabBarInactiveTintColor: "gray",
           tabBarStyle: {
@@ -97,7 +97,7 @@ const Navigation = () => {
       theme={isDarkMode ? DarkTheme : LightTheme}
     >
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name={SCREENS.HOME} component={renderTabNavigation} />
+        <Stack.Screen name={SCREENS.HOME} component={RenderTabNavigation} />
         <Stack.Screen name={SCREENS.DETAIL}>
           {(props) => <DetailScreen {...props} />}
         </Stack.Screen>
