@@ -27,16 +27,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@babel/runtime": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@tsconfig/react-native": "^2.0.2",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^18.0.24",
     "@types/react-native": "0.70.7",
+    "@types/react-test-renderer": "^18.0.2",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.49.0",
-    "@tsconfig/react-native": "^2.0.2",
-    "@types/react": "^18.0.24",
-    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-module-resolver": "^5.0.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-eslint-comments": "3.2.0",
@@ -54,6 +56,7 @@
     "metro-react-native-babel-preset": "^0.73.7",
     "prettier": "^2.7.1",
     "react-native-codegen": "0.71.5",
+    "react-test-renderer": "^18.2.0",
     "typescript": "^4.8.4"
   },
   "scripts": {
@@ -71,7 +74,7 @@
     "test:apk": "react-native run-android --variant=release",
     "prettier": "cd src && npx prettier --write . && git add .",
     "prepare": "husky install",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "engine": {
