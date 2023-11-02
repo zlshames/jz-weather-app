@@ -1,6 +1,6 @@
 export default [
   {
-    name: "React Native Dynamic Search Bar",
+    name: "Daily News Stream",
     description:
       "Dynamic fully customizable search bar for both iOS and Android",
     language: "Typescript",
@@ -8,7 +8,7 @@ export default [
     fork: 152,
   },
   {
-    name: "React Native Bouncy Checkbox",
+    name: "Weekly News Stream",
     description: "Fully customizable animated bouncy checkbox",
     language: "Typescript",
     star: 272,

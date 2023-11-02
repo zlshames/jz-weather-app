@@ -91,13 +91,13 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   const Welcome = () => (
     <>
       <Text h1 bold color={colors.text}>
-        Hello Zach
+        Hello JT
       </Text>
       <Text
         fontFamily={fonts.montserrat.lightItalic}
         color={colors.placeholder}
       >
-        The weather is looking nice
+        The app to fix all apps
       </Text>
     </>
   );

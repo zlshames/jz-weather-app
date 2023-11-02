@@ -12,7 +12,7 @@ export default (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create<Style>({
     container: {
-      flex: 1,
+      flex: 2,
       alignItems: "center",
       justifyContent: "center",
     },
@@ -21,7 +21,7 @@ export default (theme: ExtendedTheme) => {
     },
     buttonStyle: {
       height: 45,
-      width: "90%",
+      width: "25%",
       marginTop: 32,
       borderRadius: 12,
       alignItems: "center",
