@@ -5,4 +5,7 @@ export default [
   {
     name: "Weekly Weather Forecast",
   },
+  {
+    name: "Weekly Weather Forecast",
+  },
 ];
