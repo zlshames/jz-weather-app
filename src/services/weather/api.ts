@@ -193,6 +193,7 @@ export const fetchForecast = async (place: IPlace): Promise<IForecast> => {
     hourly: hours,
     daily: days,
     nowIndex,
+    utcOffsetSeconds: num(data.utc_offset_seconds),
   };
 };
 

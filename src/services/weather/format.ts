@@ -102,6 +102,28 @@ export const mediumDate = (date: string) => {
 
 export const dayOfMonth = (date: string) => parts(date).day;
 
+/** A Unix timestamp as a wall-clock string ("2026-10-12T17:00") at a UTC offset. */
+const localIso = (unixSeconds: number, utcOffsetSeconds: number) =>
+  new Date((unixSeconds + utcOffsetSeconds) * 1000).toISOString().slice(0, 16);
+
+/** "Monday 7:20 pm" */
+export const timestampLabel = (
+  unixSeconds: number,
+  utcOffsetSeconds: number,
+) => {
+  const iso = localIso(unixSeconds, utcOffsetSeconds);
+  return `${WEEKDAYS[weekdayIndex(iso)]} ${clockLabel(iso, true)}`;
+};
+
+/** "5p" when the timestamp falls exactly on the hour, otherwise null. */
+export const onTheHourLabel = (
+  unixSeconds: number,
+  utcOffsetSeconds: number,
+) => {
+  const iso = localIso(unixSeconds, utcOffsetSeconds);
+  return parts(iso).minute === 0 ? hourLabel(iso) : null;
+};
+
 export const compass = (direction: number) =>
   COMPASS[Math.round((((direction % 360) + 360) % 360) / 22.5) % 16];
 

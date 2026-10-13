@@ -68,11 +68,13 @@ export interface IWeatherAlert {
 
 export interface IForecast {
   current: ICurrentConditions;
-  /** Every hour returned, starting one hour before the current hour. */
+  /** Every hour of the forecast period, starting at midnight today (location time). */
   hourly: IHourForecast[];
   daily: IDayForecast[];
   /** Index into `hourly` of the hour containing `current.time`. */
   nowIndex: number;
+  /** The location's offset from UTC, for formatting timestamps in its local time. */
+  utcOffsetSeconds: number;
 }
 
 export interface IWeatherBundle {
